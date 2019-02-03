@@ -1,0 +1,119 @@
+Course: CEBD1250 Big Data Storage
+Class #2 Exercises
+---------------------------------
+
+
+create table course
+(course_id integer primary key,
+course_name varchar(50) not null,
+course_description varchar(100) not null
+);
+
+
+alter table course add course_day varchar(50);
+
+
+1. Get all female employees 
+
+
+# get table description
+desc employees
+
+# query employees table for females(F)
+select emp_no, first_name, last_name, gender, birth_date, hire_date
+from employees 
+where gender ='F'
+
+
+2. Get all employees hired after 01-01-1995
+
+# query employees by hire date
+select * from employees where hire_date > '1995-01-01';
+
+
+3. Get all the valid titles (with to_date equals to 01-01-9999)
+
+# get table description
+desc titles;
+
+#query table for valid titles
+select * from titles where to_date = '9999-01-01';
+
+4. Get all salaries from 60000 to 90000 
+
+# get table description
+desc salaries;
+
+# query table for salary range and current salaries
+select * from salaries 
+where to_date = '9999-01-01' and (salary >= 60000 and salary <=90000);
+
+
+
+5. Get all titles where title is equal to engineer 
+
+select * from titles where upper(title) = 'ENGINEER';
+
+
+6.  Insert a new row into course table with 1, ‘CED-1250’, ‘Big Data Storage’
+
+# get table description
+desc course;
+
+insert into course (course_id, course_name, course_description, course_day)
+values (1, 'CED-1250', 'Big Data Storage', null);
+
+# commit record to table
+commit;
+
+7. Delete all male employees hired at 01-01-2009 
+
+# get table description
+desc employees;
+ 
+select count(*) from employees;
+
+select count(*) from employees where hire_date = '2009-01-01';
+
+# delete employees whose hire_date = '2009-01-01
+delete from employees where hire_date = '2009-01-01';
+
+# count total records
+select count(*) from employees;
+
+
+8.  Update the salary of employee 499984 to 100000 
+# get table description
+desc salaries;
+
+select * from salaries where emp_no = 499984 and to_date = '9999-01-01';
+
+
+update salaries
+set salary = 100000
+where emp_no =499984 and to_date = '9999-01-01';
+
+commit;
+
+select * from salaries where emp_no = 499984 and to_date = '9999-01-01';
+
+
+9. Delete all titles not valid (with to_date not equal to 01-01-9999)
+
+# get table description
+desc titles;
+
+# count total records
+select count(*) from titles;
+
+# count number of records to delete
+select count(*) from titles 
+where to_date <> '9999-01-01';
+
+# delete not valid records
+delete from titles where to_date <> '9999-01-01';
+
+# count total records
+select count(*) from titles;
+
+
