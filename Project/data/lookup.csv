@@ -1,0 +1,27 @@
+LOOKUP_CODE	CODE	VALUE
+PETTYPE	1	dog
+PETTYPE	2	cat
+GENDER	1	Male
+GENDER	2	Female
+GENDER	3	Mixed
+MATURITY	1	Small
+MATURITY	2	Medium
+MATURITY	3	Large
+MATURITY	4	Extra Large
+MATURITY	0	Not Specified
+LENGTH	1	Short
+LENGTH	2	Medium
+LENGTH	3	Long
+LENGTH	4	Not Specified
+YESNO	1	Yes
+YESNO	2	No
+YESNO	3	Not Sure
+HEALTH	1	Healthy
+HEALTH	2	Minor Injury
+HEALTH	3	Serious Injury
+HEALTH	0	Not Specified
+ADOPTIONSPEED	0	same day
+ADOPTIONSPEED	1	1 to 7 days
+ADOPTIONSPEED	2	8 to 30 days
+ADOPTIONSPEED	3	31 to 90 days
+ADOPTIONSPEED	4	after 100 days
